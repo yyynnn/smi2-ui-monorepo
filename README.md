@@ -1,4 +1,4 @@
-# Frontend Monorepo Boilerplate TypeScript / Tailwind / Material UI / Next.js
+# Frontend Monorepo TypeScript / Material UI / Next.js
 
 [![TypeScript][typescript-badge]][typescript-url]
 [![semantic-release][semantic-badge]][semantic-url]
@@ -49,9 +49,8 @@ Visit one of the monorepo apps [localhost:3100](http://localhost:3100/)
 - [Next.js v13](https://github.com/vercel/next.js) apps
 - Monorepo implements 3 styling solutions with shared theme across all apps (pick your use case and remove others).  
   Easily import UI components package into apps:
-  - [Vanilla CSS package](https://github.com/mkosir/turborepo-boilerplate/tree/main/packages/ui)
-  - [Tailwind](https://github.com/mkosir/turborepo-boilerplate/tree/main/packages/ui-tailwind) components library built with [Tailwind v3](https://tailwindcss.com/)
-  - [Material UI](https://github.com/mkosir/turborepo-boilerplate/tree/main/packages/ui-mui) components library built with [MUI v5](https://mui.com/)
+  - [Vanilla CSS package](/tree/main/packages/ui)
+  - [Material UI](/tree/main/packages/ui-mui) components library built with [MUI v5](https://mui.com/)
 - Unit and integration tests with [Jest](https://github.com/facebook/jest) and [React Testing Library](https://github.com/testing-library/react-testing-library). Run a single test in any monorepo app/package [instantly](https://github.com/mkosir/typescript-react-guidelines/raw/main/misc/vscode-jest-runner.gif).
 - Linting with [ESLint](https://eslint.org/)
 - [Prettier](https://prettier.io/) code formatter
@@ -93,7 +92,7 @@ TLDR:
 - Use of server-state library is encouraged ([react-query](https://tanstack.com/query/latest)).
 - Use of client-state library for global state is discouraged.  
   Reconsider if something should be truly global across application, e.g. `themeMode`, `Permissions` or even that can be put in server-state user settings (e.g. `/me` endpoint). If still truly needed use [Zustand](https://github.com/pmndrs/zustand) (no Redux).
-- Use named exports. In case of exceptions disable [eslint rule](https://github.com/mkosir/frontend-monorepo-boilerplate/blob/main/packages/config-eslint/index.js#L78) (e.g. Next.js pages).
+- Use named exports.
 
 ## Monorepo
 
@@ -102,7 +101,7 @@ Monorepo features and conventions:
 - Monorepo is opinionated in order to achieve best developer experience. It's meant to be used as frontend only monorepo, 100% TypeScript, consistent codebase across whole monorepo with automated tooling in place as ESLint, Prettier, TypeScript, conventional commits etc.
 - Workspaces:
   - It comes with two workspaces `apps` and `packages`.
-  - All configurations (eslint, jest, tailwind etc.) in `packages` are always prefixed with "config-" and imported into other workspaces directly from source without building (never transpiled).
+  - All configurations (eslint, jest, etc.) in `packages` are always prefixed with "config-" and imported into other workspaces directly from source without building (never transpiled).
   - All other `packages` beside configurations are always being built/transpiled to `dist/` folder.
 - Merging to `main` branch deploys to `stage` environment, creating new GitHub release deploys to `production`.
 - For consistency all applications in monorepo are built with Next.js, but can be easily replaced with any other React framework/tooling (Vite, Remix etc.)
@@ -112,14 +111,14 @@ Monorepo features and conventions:
 [typescript-url]: https://github.com/microsoft/TypeScript
 [semantic-badge]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
 [semantic-url]: https://github.com/semantic-release/semantic-release
-[build-badge]: https://github.com/mkosir/turborepo-boilerplate/actions/workflows/build.yml/badge.svg
-[build-url]: https://github.com/mkosir/turborepo-boilerplate/actions/workflows/build.yml
-[lint-badge]: https://github.com/mkosir/turborepo-boilerplate/actions/workflows/lint.yml/badge.svg
-[lint-url]: https://github.com/mkosir/turborepo-boilerplate/actions/workflows/lint.yml
-[tsc-badge]: https://github.com/mkosir/turborepo-boilerplate/actions/workflows/tsc.yml/badge.svg
-[tsc-url]: https://github.com/mkosir/turborepo-boilerplate/actions/workflows/tsc.yml
-[test-badge]: https://github.com/mkosir/turborepo-boilerplate/actions/workflows/test.yml/badge.svg
-[test-url]: https://github.com/mkosir/turborepo-boilerplate/actions/workflows/test.yml
+[build-badge]: /actions/workflows/build.yml/badge.svg
+[build-url]: /actions/workflows/build.yml
+[lint-badge]: /actions/workflows/lint.yml/badge.svg
+[lint-url]: /actions/workflows/lint.yml
+[tsc-badge]: /actions/workflows/tsc.yml/badge.svg
+[tsc-url]: /actions/workflows/tsc.yml
+[test-badge]: /actions/workflows/test.yml/badge.svg
+[test-url]: /actions/workflows/test.yml
 
 <!-- Deployments  App -->
 

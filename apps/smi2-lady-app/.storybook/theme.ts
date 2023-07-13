@@ -3,6 +3,6 @@ import { getVersionInfo } from 'utils-version';
 
 export const theme = create({
   base: 'light',
-  brandTitle: `UI - Material UI - ${getVersionInfo()}`,
+  brandTitle: `Website - Material UI - ${getVersionInfo()}`,
   brandUrl: '',
 });
