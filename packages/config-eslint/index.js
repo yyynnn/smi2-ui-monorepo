@@ -22,6 +22,7 @@ module.exports = {
   ],
 
   rules: {
+    '@tanstack/query/prefer-query-object-syntax': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
 
@@ -33,11 +34,11 @@ module.exports = {
     'spaced-comment': 'error',
     'id-length': ['error', { min: 2, properties: 'never' }],
 
-    '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+    '@typescript-eslint/consistent-type-definitions': 'off',
     '@typescript-eslint/array-type': ['error', { default: 'generic' }],
     '@typescript-eslint/ban-types': 'error',
     '@typescript-eslint/prefer-nullish-coalescing': 'error',
-    '@typescript-eslint/no-unnecessary-condition': 'error',
+    '@typescript-eslint/no-unnecessary-condition': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/prefer-ts-expect-error': 'off',
     '@typescript-eslint/no-explicit-any': 'off',

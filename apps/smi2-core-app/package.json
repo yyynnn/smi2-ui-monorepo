@@ -13,7 +13,7 @@
     "storybook": "storybook dev -p 6100 --quiet",
     "storybook-build": "storybook build -o build-storybook-static",
     "update-dependencies": "npx npm-check-updates -u",
-    "orval": "npx orval --config ./orval.config.js && npx prettier --config ./.prettierrc --write ./src/api/generated/* && npx eslint --fix ./src/api/generated/*"
+    "orval": "npx orval --config ./orval.config.js && npx prettier --write ./src/common/api/generated/* && npx eslint --fix ./src/common/api/generated/*"
   },
   "dependencies": {
     "config-mui": "*",

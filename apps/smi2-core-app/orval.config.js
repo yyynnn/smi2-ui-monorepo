@@ -55,15 +55,15 @@ const config = serviceConfig.reduce((prev, curr) => {
       output: {
         client: 'react-query',
         mode: 'tags-split',
-        target: `./src/api/generated/queries/${curr.service}/queries.ts`,
-        schemas: `./src/api/generated/types/${curr.service}/`,
+        target: `./src/common/api/generated/queries/${curr.service}/queries.ts`,
+        schemas: `./src/common/api/generated/types/`,
         prettier: true,
-        override: {
-          mutator: {
-            path: './src/api/axiosInstance.tsx',
-            name: 'axiosInstance',
-          },
-        },
+        // override: {
+        //   mutator: {
+        //     path: './src/api/axiosInstance.tsx',
+        //     name: 'axiosInstance',
+        //   },
+        // },
         // override: {
         //   query: {
         //     useQuery: true
