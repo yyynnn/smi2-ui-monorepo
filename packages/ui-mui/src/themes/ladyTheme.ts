@@ -1,69 +1,11 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 // eslint-disable @typescript-eslint/restrict-template-expressions
 // eslint-disable-next-line no-restricted-imports
-import ArrowDropDownRounded from '@mui/icons-material/ArrowDropDownRounded';
-// @ts-ignore
-import type {} from '@mui/lab/themeAugmentation';
 import { alpha, createTheme, Theme, ThemeOptions } from '@mui/material/styles';
 import { Palette as MuiPallete, PaletteOptions as MuiPaletteOptions } from '@mui/material/styles/createPalette';
-import { deepmerge } from '@mui/utils';
 
 import { darkPurple, grey, purple, lightPurple } from '../colors';
 import { BREAKPOINTS, CONTAINER_WIDTHS } from '../consts/style';
-
-declare module '@mui/material/Button' {
-  interface ButtonPropsSizeOverrides {
-    extraLarge: true;
-  }
-}
-
-declare module '@mui/material/Typography' {
-  interface TypographyPropsVariantOverrides {
-    h0: true;
-  }
-}
-
-declare module '@mui/material/styles/createPalette' {
-  interface ColorRange {
-    50: string;
-    100: string;
-    200: string;
-    300: string;
-    400: string;
-    500: string;
-    600: string;
-    700: string;
-    800: string;
-    900: string;
-  }
-
-  // type PaletteColor = ColorRange;
-
-  interface Palette {
-    primaryDark: PaletteColor;
-    tertiary: { main: string };
-  }
-}
-
-declare module '@mui/material/styles/createTypography' {
-  interface TypographyOptions {
-    fontWeightSemiBold?: number;
-    fontWeightExtraBold?: number;
-    fontFamilyCode?: string;
-  }
-
-  interface Typography {
-    fontWeightSemiBold: number;
-    fontWeightExtraBold: number;
-    fontFamilyCode: string;
-  }
-}
-
-declare module '@mui/material/Chip' {
-  interface ChipPropsColorOverrides {
-    grey: true;
-  }
-}
 
 const defaultTheme = createTheme();
 
@@ -83,7 +25,7 @@ export const opacityBlack = {
 };
 
 const systemFont = [
-  '"Inter"',
+  '"Roboto"',
   '"Helvetica Neue"',
   'Arial',
   'sans-serif',
@@ -230,9 +172,9 @@ export const getDesignTokens = (mode: 'light' | 'dark') => {
     },
     spacing: 10,
     typography: {
-      fontFamily: ['"Inter"', ...systemFont].join(','),
+      fontFamily: ['"Roboto"', ...systemFont].join(','),
       fontFamilyCode: ['Consolas', 'Menlo', 'Monaco', 'Andale Mono', 'Ubuntu Mono', 'monospace'].join(','),
-      fontFamilyTagline: ['"Inter"', ...systemFont].join(','),
+      fontFamilyTagline: ['"Roboto"', ...systemFont].join(','),
       fontFamilySystem: systemFont.join(','),
       fontWeightRegular: 500,
       fontWeightSemiBold: 600,
@@ -245,21 +187,21 @@ export const getDesignTokens = (mode: 'light' | 'dark') => {
         color: mode === 'dark' ? '#fff' : '#000',
       },
       h1: {
-        fontFamily: ['"Inter"', ...systemFont].join(','),
+        fontFamily: ['"Roboto"', ...systemFont].join(','),
         fontSize: 'clamp(56px, 1.2857rem + 3.5714vw, 56px)',
         fontWeight: 600,
         lineHeight: 78 / 64,
         color: mode === 'dark' ? '#fff' : '#000',
       },
       h2: {
-        fontFamily: ['"Inter"', ...systemFont].join(','),
+        fontFamily: ['"Roboto"', ...systemFont].join(','),
         fontSize: 'clamp(35px, 0.9643rem + 1.4286vw, 40px)',
         fontWeight: 600,
         lineHeight: 50 / 44,
         color: mode === 'dark' ? '#fff' : '#000',
       },
       h3: {
-        fontFamily: ['"Inter"', ...systemFont].join(','),
+        fontFamily: ['"Roboto"', ...systemFont].join(','),
         fontSize: defaultTheme.typography.pxToRem(32),
         lineHeight: 44 / 32,
         fontWeight: 600,
@@ -267,7 +209,7 @@ export const getDesignTokens = (mode: 'light' | 'dark') => {
         color: mode === 'dark' ? '#fff' : '#000',
       },
       h4: {
-        fontFamily: ['"Inter"', ...systemFont].join(','),
+        fontFamily: ['"Roboto"', ...systemFont].join(','),
         fontSize: defaultTheme.typography.pxToRem(24),
         lineHeight: 42 / 24,
         fontWeight: 600,
@@ -275,7 +217,7 @@ export const getDesignTokens = (mode: 'light' | 'dark') => {
         color: mode === 'dark' ? '#fff' : '#000',
       },
       h5: {
-        fontFamily: ['"Inter"', ...systemFont].join(','),
+        fontFamily: ['"Roboto"', ...systemFont].join(','),
         fontSize: defaultTheme.typography.pxToRem(20),
         lineHeight: 36 / 20,
         fontWeight: 600,
@@ -513,24 +455,7 @@ export function getThemedComponents(theme: Theme): { components: Theme['componen
       MuiFormHelperText: {
         styleOverrides: {
           root: {
-            color: '#9DA5AC',
             fontWeight: 'normal',
-            '&.MuiInputLabel-shrink': {
-              transform: 'translate(14px,7px) scale(0.75)',
-            },
-          },
-        },
-      },
-      MuiInputLabel: {
-        styleOverrides: {
-          root: {
-            transform: 'translate(14px, 12px) scale(1)',
-            display: 'flex',
-            flexDirection: 'row-reverse',
-            gap: '6px',
-            '& .MuiFormLabel-asterisk.MuiInputLabel-asterisk': {
-              color: 'red',
-            },
             '&.MuiInputLabel-shrink': {
               transform: 'translate(14px,7px) scale(0.75)',
             },
@@ -674,9 +599,6 @@ export function getThemedComponents(theme: Theme): { components: Theme['componen
         },
       },
       MuiSelect: {
-        defaultProps: {
-          IconComponent: ArrowDropDownRounded,
-        },
         styleOverrides: {
           iconFilled: {
             // top: 'calc(50% - .25em)'
@@ -785,4 +707,3 @@ export function getThemedComponents(theme: Theme): { components: Theme['componen
 
 export const darkTheme = createTheme(getDesignTokens('dark'));
 export const lightTheme = createTheme(getDesignTokens('light'));
-export const brandingDarkTheme = deepmerge(darkTheme, getThemedComponents(darkTheme));

@@ -1,12 +1,41 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import { CssBaseline, GlobalStyles, PaletteMode } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { deepmerge } from '@mui/utils';
 import React, { useMemo } from 'react';
 import { getWindow } from 'ssr-window';
 import { coreTheme } from 'ui-mui';
 
 import { globalStyles } from './globalStyles';
+
+type ObjectValue = Record<string, any>;
+
+export const deepMerge = (target: ObjectValue, ...sources: Array<ObjectValue>): ObjectValue => {
+  if (!sources.length) {
+    return target;
+  }
+
+  const source = sources.shift();
+
+  if (isObject(target) && isObject(source)) {
+    for (const key in source) {
+      if (isObject(source[key])) {
+        if (!target[key]) {
+          Object.assign(target, { [key]: {} });
+        }
+        deepMerge(target[key], source[key]);
+      } else {
+        Object.assign(target, { [key]: source[key] });
+      }
+    }
+  }
+
+  return deepMerge(target, ...sources);
+};
+
+const isObject = (item: any): boolean => {
+  return item && typeof item === 'object' && !Array.isArray(item);
+};
+
 const window = getWindow();
 
 export const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
@@ -38,9 +67,7 @@ export function BrandingProvider({ children, mode: modeProp }: BrandingProviderP
   );
 
   const theme = useMemo(() => {
-    const designTokens = coreTheme.getDesignTokens(mode);
-    let newTheme = createTheme(designTokens);
-    newTheme = deepmerge(newTheme, coreTheme.getThemedComponents(newTheme));
+    const newTheme = mode === 'light' ? coreTheme.lightTheme : coreTheme.darkTheme;
     return newTheme;
   }, [mode]);
 
@@ -52,5 +79,3 @@ export function BrandingProvider({ children, mode: modeProp }: BrandingProviderP
     </ColorModeContext.Provider>
   );
 }
-
-// color-scheme

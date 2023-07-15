@@ -194,7 +194,7 @@ export const Navbar = () => {
           </Flex>
         </SwipeableDrawer>
       </FixedNavbar>
-      <StyledSpacer space={auxMenuRoutes.length > 0 ? 99 : 51} mobSpace={44} isMobile />
+      <StyledSpacer space={auxMenuRoutes.length > 0 ? 119 : 51} mobSpace={44} isMobile />
       {/* {auxMenuRoutes.length > 0 && <StyledSpacer space={38} mobSpace={1} isMobile />} */}
     </>
   ) : null;
@@ -203,7 +203,6 @@ export const Navbar = () => {
 const StyledSpacer = styled(Spacer)`
   width: 100%;
   max-width: 100%;
-  background-color: ${({ theme }) => (theme.palette.mode === 'light' ? '#fff' : theme.palette.background.paper)};
 `;
 
 const Navblock = styled(Flex)``;
@@ -213,8 +212,8 @@ const LogoWrapper = styled(Flex)``;
 const AuxNavbar = styled(Paper)`
   padding: 10px 0;
   background-color: ${({ theme }) => (theme.palette.mode === 'light' ? '#f8f8f8' : theme.palette.background.paper)};
-  max-height: 38px;
   width: 100%;
+  background-color: #151515;
 `;
 
 const FixedNavbar = styled('div')<any>`

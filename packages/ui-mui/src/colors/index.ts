@@ -5,6 +5,7 @@ export const brandGreen = {
   300: '#79c680',
   400: '#5dba64',
   500: '#40ae49',
+  main: '#40ae49',
   600: '#3aa742',
   700: '#329d39',
   800: '#2a9431',
@@ -13,6 +14,44 @@ export const brandGreen = {
   A200: '#8bff90',
   A400: '#58ff5f',
   A700: '#3fff46',
+  contrastDefaultColor: 'dark',
+};
+
+export const brandDarkGreen = {
+  50: '#e3ece4',
+  100: '#bacfbb',
+  200: '#8cb08d',
+  300: '#5d905f',
+  400: '#3b783d',
+  500: '#18601b',
+  main: '#18601b',
+  600: '#155818',
+  700: '#114e14',
+  800: '#0e4410',
+  900: '#083308',
+  A100: '#6dff6d',
+  A200: '#3aff3a',
+  A400: '#07ff07',
+  A700: '#00ec00',
+  contrastDefaultColor: 'light',
+};
+
+export const brandLightGreen = {
+  50: '#f2fcf2',
+  100: '#def7df',
+  200: '#c8f2ca',
+  300: '#b2edb5',
+  400: '#a2e9a5',
+  500: '#91e595',
+  main: '#91e595',
+  600: '#89e28d',
+  700: '#7ede82',
+  800: '#74da78',
+  900: '#62d367',
+  A100: '#ffffff',
+  A200: '#ffffff',
+  A400: '#daffdc',
+  A700: '#c1ffc3',
   contrastDefaultColor: 'dark',
 };
 

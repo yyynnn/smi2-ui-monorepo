@@ -1,14 +1,24 @@
 import { CacheProvider } from '@emotion/react';
-import { ThemeProvider, CssBaseline, Box, Typography } from '@mui/material';
+import { QueryClient } from '@tanstack/react-query';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { appWithTranslation } from 'next-i18next';
+import { setConfiguration } from 'react-grid-system';
+import { BREAKPOINTS } from 'ui-mui';
 import { createEmotionCache } from 'utils-mui';
 
 import { Navbar } from '../common/navigation/Navbar';
 import { BrandingProvider } from '../common/themingAndStyling/BrandingProvider';
 
 const clientSideEmotionCache = createEmotionCache();
+
+const queryClient = new QueryClient();
+
+setConfiguration({
+  gutterWidth: 20,
+  breakpoints: BREAKPOINTS,
+  containerWidths: [400, 800, 1020, 1300, 1400, 1900],
+});
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
