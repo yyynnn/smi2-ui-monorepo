@@ -23,7 +23,8 @@
     "remove-turbo-cache": "shx rm -rf ./node_modules/.cache/turbo",
     "update-dependencies": "turbo update-dependencies && npx npm-check-updates -u",
     "cm": "npx git-cz",
-    "cm:retry": "npx git-cz --retry"
+    "cm:retry": "npx git-cz --retry",
+    "postinstall": "npm run build"
   },
   "dependencies": {
     "@emotion/react": "11.11.1",
@@ -33,12 +34,17 @@
     "@mui/material": "5.14.0",
     "@tanstack/react-query": "4.29.19",
     "@tanstack/react-query-devtools": "4.29.19",
+    "ssr-window": "4.0.2",
     "axios": "1.4.0",
     "date-fns": "2.30.0",
+    "react-i18next": "13.0.2",
+    "i18next": "23.2.11",
+    "next-i18next": "14.0.0",
     "next": "13.4.9",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "7.45.1",
+    "react-grid-system": "8.1.9",
     "zod": "3.21.4",
     "orval": "6.17.0"
   },

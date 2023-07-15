@@ -22,6 +22,8 @@ module.exports = {
   ],
 
   rules: {
+    'prettier/prettier': 'warn',
+
     '@tanstack/query/prefer-query-object-syntax': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
@@ -29,10 +31,10 @@ module.exports = {
     'storybook/no-title-property-in-meta': 'error',
 
     'prefer-template': 'error',
-    'no-nested-ternary': 'error',
+    'no-nested-ternary': 'off',
     'no-unneeded-ternary': 'error',
     'spaced-comment': 'error',
-    'id-length': ['error', { min: 2, properties: 'never' }],
+    'id-length': ['off', { min: 2, properties: 'never' }],
 
     '@typescript-eslint/consistent-type-definitions': 'off',
     '@typescript-eslint/array-type': ['error', { default: 'generic' }],
@@ -46,6 +48,11 @@ module.exports = {
     '@typescript-eslint/no-unsafe-return': 'off',
     '@typescript-eslint/no-unsafe-member-access': 'off',
     '@typescript-eslint/no-unsafe-argument': 'off',
+    '@typescript-eslint/no-unsafe-call': 'off',
+    '@typescript-eslint/no-floating-promises': 'off',
+    '@typescript-eslint/no-misused-promises': 'off',
+    '@typescript-eslint/restrict-template-expressions': 'off',
+
     'no-array-reduce/no-reduce': 'off',
     'jsx-a11y/anchor-is-valid': ['off'],
 

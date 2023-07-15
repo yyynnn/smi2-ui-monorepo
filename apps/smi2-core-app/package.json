@@ -16,7 +16,6 @@
     "orval": "npx orval --config ./orval.config.js && npx prettier --write ./src/common/api/generated/* && npx eslint --fix ./src/common/api/generated/*"
   },
   "dependencies": {
-    "config-mui": "*",
     "ui": "*",
     "ui-mui": "*",
     "utils-mui": "*",

@@ -1,6 +1,6 @@
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import { Preview } from '@storybook/react';
-import { theme } from 'config-mui';
+import { lightTheme } from 'ui-mui/src/themes/coreTheme';
 
 export const baseStorybookPreview: Preview = {
   parameters: {
@@ -20,7 +20,7 @@ export const baseStorybookPreviewMui: Preview = {
   ...baseStorybookPreview,
   decorators: [
     (Story) => (
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={lightTheme}>
         <CssBaseline />
         <Story />
       </ThemeProvider>

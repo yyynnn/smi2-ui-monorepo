@@ -6,6 +6,6 @@
     "update-dependencies": "npx npm-check-updates -u"
   },
   "dependencies": {
-    "config-mui": "*"
+    "ui-mui": "*"
   }
 }

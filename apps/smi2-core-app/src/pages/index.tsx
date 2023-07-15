@@ -1,4 +1,4 @@
-import { HomePage } from 'modules';
+import { HomePage } from 'features';
 
 const Home = () => <HomePage />;
 
